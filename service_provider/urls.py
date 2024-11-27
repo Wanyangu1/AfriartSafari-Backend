@@ -7,7 +7,7 @@ router.register(r'hotels', HotelViewSet)
 router.register(r'rooms', RoomViewSet)
 router.register(r'facilities', FacilityViewSet)
 router.register(r'booking-rules', BookingRuleViewSet)
-router.register(r'hotel-images', HotelImageViewSet)  # Endpoint for hotel images
+router.register(r'hotel-images', HotelImageViewSet)  
 
 urlpatterns = [
     path('api/', include(router.urls)),

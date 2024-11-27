@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     "corsheaders",  
     "rest_framework_simplejwt.token_blacklist",  
     'django_extensions',
-    'service_provider'
+    'service_provider',
+    'booking',
+    'payment'
 ]
 
 MIDDLEWARE = [
@@ -179,16 +181,12 @@ JAZZMIN_SETTINGS ={
     "default_icon_children": "fas fa-circle",
     "topmenu_links": [
 
-        # Url that gets reversed (Permissions can be added)
         {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
 
-        # external url that opens in a new window (Permissions can be added)
         {"name": "Support", "url": "", "new_window": True},
 
-        # model admin to link to (Permissions checked against model)
         {"model": "auth.User"},
 
-        # App with dropdown menu to all its models pages (Permissions checked against models)
         {"app": "Service_provider"},
     ],
     "copyright": "AfroartSafari.com",
