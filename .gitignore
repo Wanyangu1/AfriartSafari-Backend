@@ -11,6 +11,7 @@ __pycache__/
 # Django static files and media
 /static/
 media/
+credentials.py
 
 # Database files
 *.sqlite3

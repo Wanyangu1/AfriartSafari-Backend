@@ -1,0 +1,31 @@
+<!-- templates/payment_successful.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+<div class="container mx-auto mt-12 p-6 bg-white rounded-lg shadow-lg">
+    <h1 class="text-3xl font-semibold text-center text-green-600 mb-4">Payment Successful!</h1>
+    
+    <div class="text-lg">
+        <p class="mb-4">Thank you for your payment! Your transaction has been completed successfully.</p>
+        <p class="mb-2"><strong>Payment ID:</strong> {{ payment.payment_id }}</p>
+        <p class="mb-2"><strong>Payer ID:</strong> {{ payment.payer_id }}</p>
+        <p class="mb-2"><strong>Amount:</strong> ${{ payment.amount }}</p>
+        <p class="mb-2"><strong>Currency:</strong> {{ payment.currency }}</p>
+        <p class="mb-4"><strong>Description:</strong> {{ payment.description }}</p>
+        <p class="text-sm text-gray-600">Payment status: <span class="text-green-600">{{ payment.status }}</span></p>
+    </div>
+
+    <div class="mt-6 text-center">
+        <a href="http://localhost:5173/" class="inline-block px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600">Go Back to Homepage</a>
+    </div>
+</div>
+
+</body>
+</html>

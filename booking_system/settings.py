@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
-
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'service_provider',
     'booking',
-    'payment'
+    'payment',
+    'paypal_app'
 ]
 
 MIDDLEWARE = [
@@ -131,6 +132,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'booking_system/static')
+]
+
 STATIC_ROOT = BASE_DIR / "static/"
 
 # Media settings
@@ -143,7 +148,6 @@ MEDIA_ROOT = BASE_DIR / "media/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -161,7 +165,10 @@ SIMPLE_JWT = {
     "UPDATE_LAST_LOGIN": True,
 }
 
+CSRF_COOKIE_HTTPONLY = False  # Allows the frontend to access the CSRF token
+
 # django-cors-headers settings
+CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
@@ -191,6 +198,5 @@ JAZZMIN_SETTINGS ={
     ],
     "copyright": "AfroartSafari.com",
     "welcome_sign": "AfroartSafari.com"
-    
-   
+     
 }
