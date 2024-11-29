@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'django_extensions',
     'service_provider',
     'booking',
-    'payment',
     'paypal_app'
 ]
 
@@ -190,9 +189,9 @@ JAZZMIN_SETTINGS ={
 
         {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
 
-        {"name": "Support", "url": "", "new_window": True},
+        {"name": "Download Invoices", "url": "http://localhost:5173/booking-invoice/", "new_window": True},
 
-        {"model": "auth.User"},
+        {"name": "Website Home", "url": "http://localhost:5173/services/", "new_window": True},
 
         {"app": "Service_provider"},
     ],
